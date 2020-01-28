@@ -1,10 +1,26 @@
+import { Menu } from './_model/menu';
+import { LoginService } from './_service/login.service';
+import { MenuService } from './_service/menu.service';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cineapp-frontend';
+
+  menus: Menu[] = [];
+
+  constructor(
+    private menuService: MenuService,
+    public loginService: LoginService) {
+  }
+
+  ngOnInit() {
+    this.menuService.menuCambio.subscribe(data => {
+      this.menus = data;
+    });
+  }
+
 }
