@@ -7,6 +7,7 @@ import { ReporteComponent } from './pages/reporte/reporte.component';
 import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { VentaComponent } from './pages/venta/venta.component';
 import { ComidaComponent } from './pages/comida/comida.component';
+import { RolComponent } from './pages/rol/rol.component';
 import { PeliculaEdicionComponent } from './pages/pelicula/pelicula-edicion/pelicula-edicion.component';
 import { PeliculaComponent } from './pages/pelicula/pelicula.component';
 import { GeneroComponent } from './pages/genero/genero.component';
@@ -16,6 +17,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'genero', component: GeneroComponent, canActivate: [GuardService] },
+  { path: 'rol', component: RolComponent, canActivate: [GuardService] },
   { path: 'comida', component: ComidaComponent, canActivate: [GuardService] },
   { path: 'venta', component: VentaComponent, canActivate: [GuardService] },
   { path: 'consulta', component: ConsultaComponent, canActivate: [GuardService] },

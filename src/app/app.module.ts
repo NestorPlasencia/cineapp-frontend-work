@@ -26,6 +26,7 @@ import { Not403Component } from './pages/not403/not403.component';
 import { Not404Component } from './pages/not404/not404.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NuevoComponent } from './pages/login/nuevo/nuevo.component';
+import { RolComponent } from './pages/rol/rol.component';
 
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
@@ -47,7 +48,8 @@ export function tokenGetter() {
     LoginComponent,
     Not403Component,
     Not404Component,
-    NuevoComponent
+    NuevoComponent,
+    RolComponent
   ],
   entryComponents: [GeneroDialogoComponent, ComidaDialogoComponent, ConsultaDialogoComponent],
   imports: [
