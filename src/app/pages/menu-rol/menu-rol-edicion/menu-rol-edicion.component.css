@@ -1,0 +1,27 @@
+.invalido {
+  color: red;
+}
+
+.example-container {
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  display: flex;
+  margin-top: 1em;
+}
+.buttons-container button {
+  margin: 0 1em;
+}
+
+.example-section {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.5rem 0;
+}

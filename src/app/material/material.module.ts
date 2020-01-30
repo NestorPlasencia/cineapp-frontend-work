@@ -29,7 +29,8 @@ import { MatTableModule, MatButtonModule, MatFormFieldModule, MatInputModule, Ma
     MatListModule,
     MatCheckboxModule,
     MatChipsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule
   ],
   exports: [
     MatTableModule,

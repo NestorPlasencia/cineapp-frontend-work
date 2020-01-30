@@ -28,6 +28,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NuevoComponent } from './pages/login/nuevo/nuevo.component';
 import { RolComponent } from './pages/rol/rol.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { MenuRolComponent } from './pages/menu-rol/menu-rol.component';
+import { MenuRolEdicionComponent } from './pages/menu-rol/menu-rol-edicion/menu-rol-edicion.component';
 
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
@@ -51,7 +53,9 @@ export function tokenGetter() {
     Not404Component,
     NuevoComponent,
     RolComponent,
-    MenuComponent
+    MenuComponent,
+    MenuRolComponent,
+    MenuRolEdicionComponent
   ],
   entryComponents: [GeneroDialogoComponent, ComidaDialogoComponent, ConsultaDialogoComponent],
   imports: [
