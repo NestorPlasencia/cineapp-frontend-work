@@ -18,3 +18,11 @@
   overflow: auto;
   max-height: 500px;
 }
+
+.form-section, .table-section   {
+  margin: 1em;
+}
+
+.buttons-container button {
+  margin-right: 1em;
+}
