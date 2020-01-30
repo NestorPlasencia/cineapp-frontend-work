@@ -1,44 +1,44 @@
-import { MenuService } from './../../_service/menu.service';
-import { Menu } from './../../_model/menu';
+import { UsuarioService } from './../../_service/usuario.service';
+import { Usuario } from './../../_model/usuario';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog, MatSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'app-menu-rol',
-  templateUrl: './menu-rol.component.html',
-  styleUrls: ['./menu-rol.component.css']
+  selector: 'app-usuario-rol',
+  templateUrl: './usuario-rol.component.html',
+  styleUrls: ['./usuario-rol.component.css']
 })
-export class MenuRolComponent implements OnInit {
+export class UsuarioRolComponent implements OnInit {
 
   cantidad: number;
   textButton: string = 'Añadir';
-  menu: Menu;
+  usuario: Usuario;
 
-  dataSource: MatTableDataSource<Menu>;
-  displayedColumns = ['idMenu', 'nombre', 'url', 'acciones'];
+  dataSource: MatTableDataSource<Usuario>;
+  displayedColumns = ['idUsuario', 'nombre', 'acciones'];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private menuService: MenuService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
+  constructor(private usuarioService: UsuarioService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
 
-    this.menu = new Menu();
+    this.usuario = new Usuario();
 
-    this.menuService.mensajeCambio.subscribe(data => {
+    this.usuarioService.mensajeCambio.subscribe(data => {
       this.snackBar.open(data, 'INFO', {
         duration: 2000
       });
     });
 
-    this.menuService.menuCambio.subscribe(data => {
+    this.usuarioService.usuarioCambio.subscribe(data => {
       console.log(data);
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
 
-    this.menuService.listarAll().subscribe(data => {
+    this.usuarioService.listar().subscribe(data => {
       console.log(data);
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
@@ -51,4 +51,3 @@ export class MenuRolComponent implements OnInit {
   }
 
 }
-

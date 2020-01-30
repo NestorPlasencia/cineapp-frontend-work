@@ -29,14 +29,24 @@ export class MenuRolEdicionComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.route.params.subscribe((params: Params) => {
-            this.idMenu = params.id;
-            this.initForm();
+        this.listarRoles();
+    }
+
+    listarRoles() {
+        this.rolService.listar().subscribe(data => {
+            this.roles = data;
+            this.getIdMenu();
         });
     }
 
-    initForm() {
-        this.listarRoles();
+    getIdMenu() {
+        this.route.params.subscribe((params: Params) => {
+            this.idMenu = params.id;
+            this.setData();
+        });
+    }
+
+    setData() {
         this.menuService.listarPorId(this.idMenu).subscribe(data => {
             this.menu = data;
             this.roles.forEach(rol => {
@@ -46,12 +56,6 @@ export class MenuRolEdicionComponent implements OnInit {
             this.idRolesSeleccionados.forEach(idRol => {
                 this.checked[idRol] = true;
             });
-        });
-    }
-
-    listarRoles() {
-        this.rolService.listar().subscribe(data => {
-            this.roles = data;
         });
     }
 

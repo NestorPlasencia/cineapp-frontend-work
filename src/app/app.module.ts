@@ -30,6 +30,8 @@ import { RolComponent } from './pages/rol/rol.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuRolComponent } from './pages/menu-rol/menu-rol.component';
 import { MenuRolEdicionComponent } from './pages/menu-rol/menu-rol-edicion/menu-rol-edicion.component';
+import { UsuarioRolComponent } from './pages/usuario-rol/usuario-rol.component';
+import { UsuarioRolEdicionComponent } from './pages/usuario-rol/usuario-rol-edicion/usuario-rol-edicion.component';
 
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
@@ -55,7 +57,9 @@ export function tokenGetter() {
     RolComponent,
     MenuComponent,
     MenuRolComponent,
-    MenuRolEdicionComponent
+    MenuRolEdicionComponent,
+    UsuarioRolComponent,
+    UsuarioRolEdicionComponent
   ],
   entryComponents: [GeneroDialogoComponent, ComidaDialogoComponent, ConsultaDialogoComponent],
   imports: [

@@ -11,6 +11,8 @@ import { RolComponent } from './pages/rol/rol.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuRolComponent } from './pages/menu-rol/menu-rol.component';
 import { MenuRolEdicionComponent } from './pages/menu-rol/menu-rol-edicion/menu-rol-edicion.component';
+import { UsuarioRolComponent } from './pages/usuario-rol/usuario-rol.component';
+import { UsuarioRolEdicionComponent } from './pages/usuario-rol/usuario-rol-edicion/usuario-rol-edicion.component';
 import { PeliculaEdicionComponent } from './pages/pelicula/pelicula-edicion/pelicula-edicion.component';
 import { PeliculaComponent } from './pages/pelicula/pelicula.component';
 import { GeneroComponent } from './pages/genero/genero.component';
@@ -24,6 +26,11 @@ const routes: Routes = [
   {
     path: 'menu_rol', component: MenuRolComponent, children: [
       { path: 'edicion/:id', component: MenuRolEdicionComponent }
+    ], canActivate: [GuardService]
+  },
+  {
+    path: 'usuario_rol', component: UsuarioRolComponent, children: [
+      { path: 'edicion/:id', component: UsuarioRolEdicionComponent }
     ], canActivate: [GuardService]
   },
   { path: 'rol', component: RolComponent, canActivate: [GuardService] },
